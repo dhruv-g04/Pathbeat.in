@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './HomePage.css';
+import Footer from './Footer'; 
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
-  
+
   useEffect(() => {
     axios.get(`${BACKEND_URL}/movies`)
       .then(response => {
@@ -29,6 +30,7 @@ const HomePage = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
