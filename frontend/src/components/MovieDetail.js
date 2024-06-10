@@ -6,22 +6,24 @@ import './MovieDetail.css';
 const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/movies/${id}`)
+    axios.get(`${BACKEND_URL}/movies/${id}`)
       .then(response => {
         setMovie(response.data);
       })
       .catch(error => {
         console.error('There was an error fetching the movie details!', error);
+        setMovie({}); // Set an empty object in case of error to avoid undefined errors
       });
-  }, [id]);
+  }, [id, BACKEND_URL]);
 
   return (
     <div className="container">
       <div className="movie-detail">
         <h1>{movie.title}</h1>
-        <img src={"/images/"+movie.image} alt={movie.title} />
+        <img src={`/images/${movie.image}`} alt={movie.title} />
         <p>{movie.longDescription}</p>
       </div>
     </div>
