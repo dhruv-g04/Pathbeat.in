@@ -1,0 +1,32 @@
+.container{
+  /* background-color: aqua; */
+}
+
+.movie-detail {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 40px 50px;
+    padding: 20px ;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-detail img {
+    width: 30%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    display: block;
+  margin: 0 auto;
+  }
+  
+  .movie-detail h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .movie-detail p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
